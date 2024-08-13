@@ -27,7 +27,7 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
     private Slider sldBudgetHoehe;
     private Button btnErstellen;
     private Spinner spnKategorie;
-
+    private DBHandler dbHandler;
 
 
     @Override
@@ -47,6 +47,7 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         sldBudgetHoehe = findViewById(R.id.sldBudgetHoeheSlider);
         btnErstellen = findViewById(R.id.btnErstellen);
         spnKategorie = findViewById(R.id.spnKategorie);
+        dbHandler = new DBHandler(getApplicationContext());
 
 
         String[] items = new String[]{"Haushaltswaren", "Elektronik", "Außergewöhnliches", "Sonstiges"};
@@ -63,6 +64,15 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
                 edtBudgetHoehe.setText(String.valueOf(value) + " €");
             }
         });
+
+        btnErstellen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Geht an DB", Toast.LENGTH_LONG).show();
+                dbHandler.addNewBudget("MeinBudget1", 1234.95f, 1);
+            }
+        });
+
 
         }
 
@@ -87,6 +97,9 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
                 break;
         }
     }
+
+
+
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
