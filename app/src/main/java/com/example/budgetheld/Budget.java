@@ -28,6 +28,7 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
     private Button btnErstellen;
     private Spinner spnKategorie;
     private DBHandler dbHandler;
+    private int kategorieAusgewaehlt;
 
 
     @Override
@@ -68,8 +69,8 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         btnErstellen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Geht an DB", Toast.LENGTH_LONG).show();
-                dbHandler.addNewBudget("MeinBudget1", 1234.95f, 1);
+                String cuttedByCurrency = edtBudgetHoehe.getText().toString().replace("€", "").replace(" ", "");
+                dbHandler.addNewBudget(edtBeschreibung.getText().toString(), Float.parseFloat(cuttedByCurrency), kategorieAusgewaehlt);
             }
         });
 
@@ -81,24 +82,28 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         String choice = parent.getItemAtPosition(position).toString();
         switch (choice) {
             case "Haushaltswaren":
-
+                kategorieAusgewaehlt = 1;
                 break;
             case "Elektronik":
-
+                kategorieAusgewaehlt = 2;
                 break;
             case "Außergewöhnliches":
-
+                kategorieAusgewaehlt = 3;
                 break;
             case "Sonstiges":
-
+                kategorieAusgewaehlt = 4;
                 break;
             default:
-
+                kategorieAusgewaehlt = 0;
                 break;
         }
     }
 
-
+    public static String removeLastTwoChars(String s) {
+        return (s == null || s.length() == 0)
+                ? null
+                : (s.substring(0, s.length() - 2));
+    }
 
 
     @Override
