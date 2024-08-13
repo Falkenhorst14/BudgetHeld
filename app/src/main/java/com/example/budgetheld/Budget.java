@@ -99,12 +99,6 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         }
     }
 
-    public static String removeLastTwoChars(String s) {
-        return (s == null || s.length() == 0)
-                ? null
-                : (s.substring(0, s.length() - 2));
-    }
-
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
