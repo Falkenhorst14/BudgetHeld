@@ -77,6 +77,7 @@ public class Ausgaben extends AppCompatActivity implements AdapterView.OnItemSel
             public void onClick(View v) {
                 String cuttedByCurrency = edtBudgetHoehe.getText().toString().replace("€", "").replace(" ", "");
                 dbHandler.addNewAusgabe(edtBeschreibung.getText().toString(), Float.parseFloat(cuttedByCurrency), kategorieAusgewaehlt);
+                loadAllAusgaben();
             }
         });
 

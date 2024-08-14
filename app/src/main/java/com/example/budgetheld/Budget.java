@@ -76,6 +76,7 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
             public void onClick(View v) {
                 String cuttedByCurrency = edtBudgetHoehe.getText().toString().replace("€", "").replace(" ", "");
                 dbHandler.addNewBudget(edtBeschreibung.getText().toString(), Float.parseFloat(cuttedByCurrency), kategorieAusgewaehlt);
+                loadAllBudgets();
             }
         });
 
