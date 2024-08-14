@@ -19,6 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+githu
 
     <EditText
         android:id="@+id/edtBeschreibung"
@@ -88,6 +89,26 @@
         app:layout_constraintTop_toBottomOf="@+id/spnKategorie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/lvBudgets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@color/design_default_color_primary"
+        android:dividerHeight="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnErstellen" />
+
+    <ScrollView
+        android:id="@+id/svBudgets"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnErstellen">
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

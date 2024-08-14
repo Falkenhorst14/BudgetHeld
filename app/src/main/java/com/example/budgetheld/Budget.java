@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.slider.Slider;
 
+import java.util.ArrayList;
+
 public class Budget extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private TextView tvBudgetErstellen;
@@ -29,6 +32,8 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
     private Spinner spnKategorie;
     private DBHandler dbHandler;
     private int kategorieAusgewaehlt;
+    private ListView lvBudgets;
+    private BudgetAdapter adapter;
 
 
     @Override
@@ -48,15 +53,16 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         sldBudgetHoehe = findViewById(R.id.sldBudgetHoeheSlider);
         btnErstellen = findViewById(R.id.btnErstellen);
         spnKategorie = findViewById(R.id.spnKategorie);
-        dbHandler = new DBHandler(getApplicationContext());
+        dbHandler = new DBHandler(this);
+        lvBudgets = findViewById(R.id.lvBudgets);
+
 
 
         String[] items = new String[]{"Haushaltswaren", "Elektronik", "Außergewöhnliches", "Sonstiges"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item, items);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, items);
 
 
-        spnKategorie.setAdapter(adapter);
-
+        spnKategorie.setAdapter(spinnerAdapter);
         spnKategorie.setOnItemSelectedListener(this);
 
         sldBudgetHoehe.addOnChangeListener(new Slider.OnChangeListener() {
@@ -74,8 +80,15 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
 
+        loadAllBudgets();
 
         }
+
+    private void loadAllBudgets() {
+        ArrayList<Einzelbudget> budgets = dbHandler.getAllBudgets();
+        adapter = new BudgetAdapter(this, budgets);
+        lvBudgets.setAdapter(adapter);
+    }
 
         @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

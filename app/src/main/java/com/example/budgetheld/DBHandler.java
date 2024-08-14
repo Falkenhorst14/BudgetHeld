@@ -2,8 +2,11 @@ package com.example.budgetheld;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 
 public class DBHandler extends SQLiteOpenHelper {
@@ -52,6 +55,32 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert(Table_FIRST, null, values);
 
         db.close();
+    }
+
+    public ArrayList<Einzelbudget> getAllBudgets() {
+        ArrayList<Einzelbudget> arrayList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM " + Table_FIRST;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        //Schleife iteriert durch alle Zeilen, waehrend die Daten in List geladen werden
+        if(cursor.moveToFirst())
+        {
+            do {
+                Einzelbudget einzelbudget = new Einzelbudget();
+                einzelbudget.setId(cursor.getInt(0));
+                einzelbudget.setBeschreibung(cursor.getString(1));
+                einzelbudget.setHoehe(cursor.getFloat(2));
+                einzelbudget.setKategorie(cursor.getInt(3));
+                arrayList.add(einzelbudget);
+            }
+            while(cursor.moveToNext());
+        }
+        cursor.close();
+        return arrayList;
     }
 
 }
