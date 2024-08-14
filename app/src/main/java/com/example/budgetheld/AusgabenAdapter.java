@@ -9,18 +9,18 @@ import android.widget.TextView;
 import java.util.List;
 
 
-public class BudgetAdapter extends ArrayAdapter<Einzelbudget>
+public class AusgabenAdapter extends ArrayAdapter<Ausgabe>
 {
-    public BudgetAdapter(Context context, List<Einzelbudget> budgets) {
-        super(context, 0, budgets);
+    public AusgabenAdapter(Context context, List<Ausgabe> ausgaben) {
+        super(context, 0, ausgaben);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Einzelbudget einzelbudget = getItem(position);
+        Ausgabe ausgabe = getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_ausgabe, parent, false);
         }
 
 
@@ -30,8 +30,8 @@ public class BudgetAdapter extends ArrayAdapter<Einzelbudget>
 
         String kategorie = "";
 
-        assert einzelbudget != null;
-        switch (einzelbudget.getKategorie()) {
+        assert ausgabe != null;
+        switch (ausgabe.getKategorie()) {
             case 1:
                 kategorie = "Haushaltswaren";
                 break;
@@ -49,9 +49,9 @@ public class BudgetAdapter extends ArrayAdapter<Einzelbudget>
                 break;
         }
 
-        assert einzelbudget != null;
-        tvBeschreibung.setText(einzelbudget.getBeschreibung());
-        tvHoehe.setText(String.valueOf(einzelbudget.getHoehe()));
+        assert ausgabe != null;
+        tvBeschreibung.setText(ausgabe.getBeschreibung());
+        tvHoehe.setText(String.valueOf(ausgabe.getHoehe()));
         tvKategorie.setText(kategorie);
 
         return convertView;

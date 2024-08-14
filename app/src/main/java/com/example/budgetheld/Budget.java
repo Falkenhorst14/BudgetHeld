@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -48,11 +47,11 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         });
 
         tvBudgetErstellen = findViewById(R.id.tvBudget);
-        edtBeschreibung = findViewById(R.id.edtBeschreibung);
-        edtBudgetHoehe = findViewById(R.id.edtBudgetHoehe);
-        sldBudgetHoehe = findViewById(R.id.sldBudgetHoeheSlider);
-        btnErstellen = findViewById(R.id.btnErstellen);
-        spnKategorie = findViewById(R.id.spnKategorie);
+        edtBeschreibung = findViewById(R.id.edtBeschreibungBudgets);
+        edtBudgetHoehe = findViewById(R.id.edtBudgetHoeheBudgets);
+        sldBudgetHoehe = findViewById(R.id.sldBudgetHoeheSliderBudgets);
+        btnErstellen = findViewById(R.id.btnErstellenBudgets);
+        spnKategorie = findViewById(R.id.spnKategorieBudgets);
         dbHandler = new DBHandler(this);
         lvBudgets = findViewById(R.id.lvBudgets);
 

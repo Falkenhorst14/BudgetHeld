@@ -15,13 +15,13 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="223dp"
         android:text="Ein Budget erstellen"
-        app:layout_constraintBottom_toTopOf="@+id/edtBeschreibung"
+        app:layout_constraintBottom_toTopOf="@+id/edtBeschreibungBudgets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtBeschreibung"
+        android:id="@+id/edtBeschreibungBudgets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvBudget" />
 
     <EditText
-        android:id="@+id/edtBudgetHoehe"
+        android:id="@+id/edtBudgetHoeheBudgets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -42,13 +42,13 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtBeschreibung"
+        app:layout_constraintTop_toBottomOf="@id/edtBeschreibungBudgets"
         android:text="100 €"
         android:autofillHints="Budget"/>
 
 
     <com.google.android.material.slider.Slider
-        android:id="@+id/sldBudgetHoeheSlider"
+        android:id="@+id/sldBudgetHoeheSliderBudgets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -61,24 +61,24 @@
         android:thumb="@drawable/ic_slider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtBudgetHoehe"
-        app:layout_constraintBottom_toTopOf="@+id/spnKategorie"
+        app:layout_constraintTop_toBottomOf="@+id/edtBudgetHoeheBudgets"
+        app:layout_constraintBottom_toTopOf="@+id/spnKategorieBudgets"
         android:contentDescription="Höhe des Budgets"/>
 
     <Spinner
-        android:id="@+id/spnKategorie"
+        android:id="@+id/spnKategorieBudgets"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="60dp"
         app:layout_constraintHorizontal_bias="0.000"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/btnErstellen"
+        app:layout_constraintBottom_toTopOf="@+id/btnErstellenBudgets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sldBudgetHoeheSlider" />
+        app:layout_constraintTop_toBottomOf="@+id/sldBudgetHoeheSliderBudgets" />
 
     <Button
-        android:id="@+id/btnErstellen"
+        android:id="@+id/btnErstellenBudgets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
@@ -86,7 +86,7 @@
         android:layout_marginBottom="468dp"
         android:backgroundTint="@color/matcolpal_900"
         android:text="Erstellen"
-        app:layout_constraintTop_toBottomOf="@+id/spnKategorie"
+        app:layout_constraintTop_toBottomOf="@+id/spnKategorieBudgets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -97,7 +97,7 @@
         android:divider="@color/matcolpal_A700"
         android:dividerHeight="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnErstellen" />
+        app:layout_constraintTop_toBottomOf="@+id/btnErstellenBudgets" />
 
     <ScrollView
         android:id="@+id/svBudgets"
@@ -106,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnErstellen">
+        app:layout_constraintTop_toBottomOf="@+id/btnErstellenBudgets">
 
     </ScrollView>
 

@@ -7,4 +7,109 @@
     android:layout_height="match_parent"
     tools:context=".Ausgaben">
 
+
+    <TextView
+        android:id="@+id/tvBudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="223dp"
+        android:text="Ein Budget erstellen"
+        app:layout_constraintBottom_toTopOf="@+id/edtBeschreibungAusgaben"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtBeschreibungAusgaben"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="140dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Beschreibung"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBudget" />
+
+    <EditText
+        android:id="@+id/edtBudgetHoeheAusgaben"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:textColor="#2a2957"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtBeschreibungAusgaben"
+        android:text="100 €"
+        android:autofillHints="Budget"/>
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sldBudgetHoeheSliderAusgaben"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:stepSize="1.0"
+        android:valueFrom="1"
+        android:valueTo="10000"
+        android:progressBackgroundTint="@color/black"
+        android:splitTrack="false"
+        android:thumb="@drawable/ic_slider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtBudgetHoeheAusgaben"
+        app:layout_constraintBottom_toTopOf="@+id/spnKategorieBudgets"
+        android:contentDescription="Höhe des Budgets"/>
+
+    <Spinner
+        android:id="@+id/spnKategorieAusgaben"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintHorizontal_bias="0.000"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/btnErstellenAusgaben"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sldBudgetHoeheSliderAusgaben" />
+
+    <Button
+        android:id="@+id/btnErstellenAusgaben"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="241dp"
+        android:layout_marginBottom="468dp"
+        android:backgroundTint="@color/matcolpal_900"
+        android:text="Erstellen"
+        app:layout_constraintTop_toBottomOf="@+id/spnKategorieAusgaben"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/lvAusgaben"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@color/matcolpal_A700"
+        android:dividerHeight="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnErstellenAusgaben" />
+
+    <ScrollView
+        android:id="@+id/svAusgaben"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnErstellenAusgaben">
+
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tvHoeheBudget"
         android:textColor="@color/matcolpal_900"
-        android:text="Mein Budget 1"
+        android:text="Meine Ausgabe 1"
         android:textSize="18sp"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
 
