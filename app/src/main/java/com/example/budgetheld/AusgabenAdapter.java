@@ -24,9 +24,9 @@ public class AusgabenAdapter extends ArrayAdapter<Ausgabe>
         }
 
 
-        TextView tvBeschreibung = convertView.findViewById(R.id.tvBeschreibungBudget);
-        TextView tvHoehe = convertView.findViewById(R.id.tvHoeheBudget);
-        TextView tvKategorie = convertView.findViewById(R.id.tvKategorieBudget);
+        TextView tvBeschreibung = convertView.findViewById(R.id.tvBeschreibungAusgabe);
+        TextView tvHoehe = convertView.findViewById(R.id.tvHoeheAusgabe);
+        TextView tvKategorie = convertView.findViewById(R.id.tvKategorieAusgabe);
 
         String kategorie = "";
 

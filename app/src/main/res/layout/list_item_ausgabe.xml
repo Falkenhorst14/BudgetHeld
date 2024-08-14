@@ -9,26 +9,26 @@
 
 
     <TextView
-        android:id="@+id/tvBeschreibungBudget"
+        android:id="@+id/tvBeschreibungAusgabe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvHoeheBudget"
+        app:layout_constraintBottom_toTopOf="@+id/tvHoeheAusgabe"
         android:textColor="@color/matcolpal_900"
         android:text="Meine Ausgabe 1"
         android:textSize="18sp"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
 
     <TextView
-        android:id="@+id/tvHoeheBudget"
+        android:id="@+id/tvHoeheAusgabe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/tvKategorieBudget"
-        app:layout_constraintTop_toBottomOf="@id/tvBeschreibungBudget"
-        app:layout_constraintBottom_toTopOf="@+id/tvKategorieBudget"
+        app:layout_constraintRight_toLeftOf="@+id/tvKategorieAusgabe"
+        app:layout_constraintTop_toBottomOf="@id/tvBeschreibungAusgabe"
+        app:layout_constraintBottom_toTopOf="@+id/tvKategorieAusgabe"
         app:drawableEndCompat="@drawable/baseline_euro_24"
         android:textColor="@color/matcolpal_900"
         android:text="1234.95"
@@ -36,13 +36,13 @@
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
 
     <TextView
-        android:id="@+id/tvKategorieBudget"
+        android:id="@+id/tvKategorieAusgabe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@id/tvHoeheBudget"
+        app:layout_constraintLeft_toRightOf="@id/tvHoeheAusgabe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBeschreibungBudget"
-        app:layout_constraintBottom_toBottomOf="@+id/tvHoeheBudget"
+        app:layout_constraintTop_toBottomOf="@+id/tvBeschreibungAusgabe"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHoeheAusgabe"
         android:layout_marginTop="0sp"
         app:drawableEndCompat="@drawable/baseline_category_24"
         android:textColor="@color/matcolpal_900"

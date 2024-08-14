@@ -21,9 +21,14 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String col_KATEGORIE = "kategorie";
 
 
+    private static final String Table_SECOND = "Ausgaben";
+
+
     public DBHandler (Context context)
+
     {
         super(context, DB_Name, null, DB_Version);
+        SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
@@ -40,6 +45,14 @@ public class DBHandler extends SQLiteOpenHelper {
                 + col_KATEGORIE + " INTEGER)";
 
         db.execSQL(query);
+
+        String queryAusgaben = "CREATE TABLE " + Table_SECOND + " ("
+                + col_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + col_Beschreibung + " TEXT,"
+                + col_HOEHE + " REAL,"
+                + col_KATEGORIE + " INTEGER)";
+
+        db.execSQL(queryAusgaben);
     }
 
     public void addNewBudget(String beschreibung, float hoehe, int kategorie)
@@ -57,6 +70,21 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void addNewAusgabe(String beschreibung, float hoehe, int kategorie)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(col_Beschreibung, beschreibung);
+        values.put(col_HOEHE, hoehe);
+        values.put(col_KATEGORIE, kategorie);
+
+        db.insert(Table_SECOND, null, values);
+
+        db.close();
+    }
+
     public ArrayList<Einzelbudget> getAllBudgets() {
         ArrayList<Einzelbudget> arrayList = new ArrayList<>();
 
@@ -66,7 +94,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery(query, null);
 
-        //Schleife iteriert durch alle Zeilen, waehrend die Daten in List geladen werden
         if(cursor.moveToFirst())
         {
             do {
@@ -82,5 +109,31 @@ public class DBHandler extends SQLiteOpenHelper {
         cursor.close();
         return arrayList;
     }
+
+    public ArrayList<Ausgabe> getAllAusgaben() {
+        ArrayList<Ausgabe> arrayList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM " + Table_SECOND;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst())
+        {
+            do {
+                Ausgabe ausgabe = new Ausgabe();
+                ausgabe.setId(cursor.getInt(0));
+                ausgabe.setBeschreibung(cursor.getString(1));
+                ausgabe.setHoehe(cursor.getFloat(2));
+                ausgabe.setKategorie(cursor.getInt(3));
+                arrayList.add(ausgabe);
+            }
+            while(cursor.moveToNext());
+        }
+        cursor.close();
+        return arrayList;
+    }
+
 
 }
