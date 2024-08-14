@@ -19,7 +19,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-githu
 
     <EditText
         android:id="@+id/edtBeschreibung"
@@ -85,6 +84,7 @@ githu
         android:layout_marginStart="66dp"
         android:layout_marginEnd="241dp"
         android:layout_marginBottom="468dp"
+        android:backgroundTint="@color/matcolpal_dark"
         android:text="Erstellen"
         app:layout_constraintTop_toBottomOf="@+id/spnKategorie"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +94,7 @@ githu
         android:id="@+id/lvBudgets"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:divider="@color/design_default_color_primary"
+        android:divider="@color/matcolpal_A700"
         android:dividerHeight="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnErstellen" />

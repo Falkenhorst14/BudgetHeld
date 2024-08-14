@@ -28,11 +28,31 @@ public class BudgetAdapter extends ArrayAdapter<Einzelbudget>
         TextView tvHoehe = convertView.findViewById(R.id.tvHoehe);
         TextView tvKategorie = convertView.findViewById(R.id.tvKategorie);
 
+        String kategorie = "";
+
+        assert einzelbudget != null;
+        switch (einzelbudget.getKategorie()) {
+            case 1:
+                kategorie = "Haushaltswaren";
+                break;
+            case 2:
+                kategorie = "Elektronik";
+                break;
+            case 3:
+                kategorie = "Außergewöhnliches";
+                break;
+            case 4:
+                kategorie = "Sonstiges";
+                break;
+            default:
+                kategorie = "Nicht angegeben";
+                break;
+        }
 
         assert einzelbudget != null;
         tvBeschreibung.setText(einzelbudget.getBeschreibung());
         tvHoehe.setText(String.valueOf(einzelbudget.getHoehe()));
-        tvKategorie.setText(String.valueOf(einzelbudget.getKategorie()));
+        tvKategorie.setText(kategorie);
 
         return convertView;
     }

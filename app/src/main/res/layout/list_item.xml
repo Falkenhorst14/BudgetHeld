@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -11,17 +12,42 @@
         android:id="@+id/tvBeschreibung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvHoehe"
+        android:textColor="@color/matcolpal_900"
+        android:text="Mein Budget 1"
+        android:textSize="18sp"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
     <TextView
         android:id="@+id/tvHoehe"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tvKategorie"
+        app:layout_constraintTop_toBottomOf="@id/tvBeschreibung"
+        app:layout_constraintBottom_toTopOf="@+id/tvKategorie"
+        app:drawableEndCompat="@drawable/baseline_euro_24"
+        android:textColor="@color/matcolpal_900"
+        android:text="1234.95"
+        android:textSize="20sp"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
 
     <TextView
         android:id="@+id/tvKategorie"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"/>
+        app:layout_constraintLeft_toRightOf="@id/tvHoehe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBeschreibung"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHoehe"
+        android:layout_marginTop="0sp"
+        app:drawableEndCompat="@drawable/baseline_category_24"
+        android:textColor="@color/matcolpal_900"
+        android:text="Haushaltswaren"
+        android:textSize="16sp"
+        style="@style/Widget.MaterialComponents.TextView"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
