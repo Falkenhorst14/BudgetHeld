@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Button btnBudgets;
+    private Button btnAusgaben;
 
 
     @Override
@@ -28,11 +29,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnBudgets = findViewById(R.id.btnBudgets);
+        btnAusgaben = findViewById(R.id.btnAusgaben);
 
         btnBudgets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Budget.class);
+                startActivity(i);
+            }
+        });
+
+        btnAusgaben.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Ausgaben.class);
                 startActivity(i);
             }
         });

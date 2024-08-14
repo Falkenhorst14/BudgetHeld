@@ -22,10 +22,25 @@
         android:layout_width="256dp"
         android:layout_height="128dp"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+        app:layout_constraintBottom_toTopOf="@id/btnAusgaben"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/matcolpal_900"
+        android:text="Budgets"
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <Button
+        android:id="@+id/btnAusgaben"
+        android:layout_width="256dp"
+        android:layout_height="128dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnBudgets"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Budgets"
+        android:backgroundTint="@color/matcolpal_900"
+        android:text="Ausgaben"
         android:textSize="35dp"
         tools:layout_editor_absoluteX="133dp"
         tools:layout_editor_absoluteY="246dp" />
