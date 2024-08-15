@@ -89,7 +89,9 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Einzelbudget myBudget = adapter.getItem(position);
-                Toast.makeText(getApplicationContext(), myBudget.getBeschreibung(), Toast.LENGTH_LONG).show();
+                dbHandler.deleteBudget(adapter.getItem(position).getId());
+                Toast.makeText(getApplicationContext(), "Budget " + myBudget.getBeschreibung() +  " gelöscht.", Toast.LENGTH_SHORT).show();
+                loadAllBudgets();
             }
         });
 

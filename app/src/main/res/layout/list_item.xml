@@ -19,7 +19,8 @@
         android:textColor="@color/matcolpal_900"
         android:text="Mein Budget 1"
         android:textSize="18sp"
-        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/tvHoeheBudget"
@@ -33,7 +34,8 @@
         android:textColor="@color/matcolpal_900"
         android:text="1234.95"
         android:textSize="20sp"
-        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/tvKategorieBudget"
@@ -48,6 +50,7 @@
         android:textColor="@color/matcolpal_900"
         android:text="Haushaltswaren"
         android:textSize="16sp"
-        style="@style/Widget.MaterialComponents.TextView"/>
+        style="@style/Widget.MaterialComponents.TextView"
+        android:focusable="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
