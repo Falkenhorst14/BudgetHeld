@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/tvWelcome"
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Herzlich Willkommen beim BudgetHeld!"
@@ -44,5 +45,17 @@
         android:textSize="35dp"
         tools:layout_editor_absoluteX="133dp"
         tools:layout_editor_absoluteY="246dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnBudgets"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/moneyhead"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="108dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

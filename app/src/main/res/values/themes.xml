@@ -11,4 +11,19 @@
         <item name="colorAccent">@color/matcolpal_dark</item>
     </style>-->
 
+    <style name="Slider" parent="@style/Widget.MaterialComponents.Slider">
+        <item name="labelStyle">@style/Tooltip</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Slider</item>
+    </style>
+
+    <style name="Tooltip" parent="Widget.MaterialComponents.Tooltip">
+        <!-- background color of the Tooltip -->
+        <item name="backgroundTint">@color/matcolpal_100</item>
+    </style>
+
+    <style name="ThemeOverlay.Slider" parent="">
+        <!-- color used by the text in the Tooltip -->
+        <item name="colorOnPrimary">@color/matcolpal_900</item>
+    </style>
+
 </resources>

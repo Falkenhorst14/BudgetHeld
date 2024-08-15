@@ -11,13 +11,10 @@
         android:id="@+id/tvBudget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="223dp"
         android:text="Ein Budget erstellen"
         app:layout_constraintBottom_toTopOf="@+id/edtBeschreibungBudgets"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/edtBeschreibungBudgets"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -28,7 +25,8 @@
         android:layout_marginEnd="140dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Beschreibung"
+        android:maxLength="42"
+        android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBudget" />
@@ -37,11 +35,11 @@
         android:id="@+id/edtBudgetHoeheBudgets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
         android:textColor="#2a2957"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/edtBeschreibungBudgets"
         app:layout_constraintTop_toBottomOf="@id/edtBeschreibungBudgets"
         android:text="100 €"
         android:autofillHints="Budget"/>
@@ -58,7 +56,13 @@
         android:valueTo="10000"
         android:progressBackgroundTint="@color/black"
         android:splitTrack="false"
-        android:thumb="@drawable/ic_slider"
+        app:thumbColor="@color/matcolpal_900"
+        app:thumbStrokeColor="@color/matcolpal_dark"
+        app:haloColor="@color/matcolpal_A700"
+        app:tickColorActive="@color/matcolpal_A700"
+        app:trackColorActive="@color/matcolpal_600"
+        app:tickColor="@color/matcolpal_600"
+        style="@style/Slider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtBudgetHoeheBudgets"
@@ -90,6 +94,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <View
+        android:id="@+id/viewTrennerBudgets"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnErstellenBudgets"
+        app:layout_constraintBottom_toTopOf="@+id/lvBudgets"
+        android:background="#c0c0c0"/>
+
     <ListView
         android:id="@+id/lvBudgets"
         android:layout_width="match_parent"
@@ -97,7 +112,7 @@
         android:divider="@color/matcolpal_A700"
         android:dividerHeight="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnErstellenBudgets" />
+        app:layout_constraintTop_toBottomOf="@+id/viewTrennerBudgets" />
 
     <ScrollView
         android:id="@+id/svBudgets"
