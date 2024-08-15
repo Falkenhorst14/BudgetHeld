@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -54,6 +55,8 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         spnKategorie = findViewById(R.id.spnKategorieBudgets);
         dbHandler = new DBHandler(this);
         lvBudgets = findViewById(R.id.lvBudgets);
+        lvBudgets.setAdapter(adapter);
+        lvBudgets.setEnabled(true);
 
 
 
@@ -82,6 +85,14 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
 
         loadAllBudgets();
 
+        lvBudgets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Einzelbudget myBudget = adapter.getItem(position);
+                Toast.makeText(getApplicationContext(), myBudget.getBeschreibung(), Toast.LENGTH_LONG).show();
+            }
+        });
+
         }
 
     private void loadAllBudgets() {
@@ -90,7 +101,8 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         lvBudgets.setAdapter(adapter);
     }
 
-        @Override
+
+    @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String choice = parent.getItemAtPosition(position).toString();
         switch (choice) {

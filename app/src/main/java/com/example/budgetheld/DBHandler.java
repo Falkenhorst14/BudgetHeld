@@ -135,5 +135,19 @@ public class DBHandler extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    public void deleteBudget(int ID)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.delete(Table_FIRST, "ID=" + Integer.toString(ID),null);
+        sqLiteDatabase.close();
+    }
+
+    public void deleteAusgabe(int ID)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.delete(Table_SECOND, "ID=" + Integer.toString(ID),null);
+        sqLiteDatabase.close();
+    }
+
 
 }

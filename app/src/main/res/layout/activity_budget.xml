@@ -113,7 +113,10 @@
         android:divider="@color/matcolpal_A700"
         android:dividerHeight="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewTrennerBudgets" />
+        app:layout_constraintTop_toBottomOf="@+id/viewTrennerBudgets"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
     <ScrollView
         android:id="@+id/svBudgets"
