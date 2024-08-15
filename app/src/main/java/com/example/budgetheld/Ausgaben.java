@@ -56,6 +56,8 @@ public class Ausgaben extends AppCompatActivity implements AdapterView.OnItemSel
         spnKategorie = findViewById(R.id.spnKategorieAusgaben);
         dbHandler = new DBHandler(this);
         lvAusgaben = findViewById(R.id.lvAusgaben);
+        lvAusgaben.setAdapter(adapter);
+        lvAusgaben.setEnabled(true);
 
 
         String[] items = new String[]{"Haushaltswaren", "Elektronik", "Außergewöhnliches", "Sonstiges"};
@@ -82,6 +84,16 @@ public class Ausgaben extends AppCompatActivity implements AdapterView.OnItemSel
         });
 
         loadAllAusgaben();
+
+        lvAusgaben.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Ausgabe myAusgabe = adapter.getItem(position);
+                dbHandler.deleteAusgabe(adapter.getItem(position).getId());
+                Toast.makeText(getApplicationContext(), "Ausgabe " + myAusgabe.getBeschreibung() +  " gelöscht.", Toast.LENGTH_SHORT).show();
+                loadAllAusgaben();
+            }
+        });
 
     }
 
