@@ -11,13 +11,15 @@
         android:id="@+id/tvBudget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="140dp"
         android:text="Ein Budget erstellen"
-        app:layout_constraintBottom_toTopOf="@+id/edtBeschreibungBudgets"
-        app:layout_constraintStart_toStartOf="@id/edtBeschreibungBudgets"
+        app:layout_constraintBottom_toTopOf="@+id/edtBudgetHoeheBudgets"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+   <!-- <EditText
         android:id="@+id/edtBeschreibungBudgets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +32,7 @@
         android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBudget" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBudget" />-->
 
     <EditText
         android:id="@+id/edtBudgetHoeheBudgets"
@@ -40,8 +42,8 @@
         android:textColor="#2a2957"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/edtBeschreibungBudgets"
-        app:layout_constraintTop_toBottomOf="@id/edtBeschreibungBudgets"
+        app:layout_constraintStart_toStartOf="@id/tvBudget"
+        app:layout_constraintTop_toBottomOf="@id/tvBudget"
         android:text="100 €"
         android:autofillHints="Budget"/>
 

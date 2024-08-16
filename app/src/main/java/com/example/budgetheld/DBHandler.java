@@ -55,13 +55,12 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(queryAusgaben);
     }
 
-    public void addNewBudget(String beschreibung, float hoehe, int kategorie)
+    public void addNewBudget(float hoehe, int kategorie)
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
 
-        values.put(col_Beschreibung, beschreibung);
         values.put(col_HOEHE, hoehe);
         values.put(col_KATEGORIE, kategorie);
 

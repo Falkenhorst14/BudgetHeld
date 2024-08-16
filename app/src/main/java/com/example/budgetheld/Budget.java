@@ -48,7 +48,7 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
         });
 
         tvBudgetErstellen = findViewById(R.id.tvBudget);
-        edtBeschreibung = findViewById(R.id.edtBeschreibungBudgets);
+        //edtBeschreibung = findViewById(R.id.edtBeschreibungBudgets);
         edtBudgetHoehe = findViewById(R.id.edtBudgetHoeheBudgets);
         sldBudgetHoehe = findViewById(R.id.sldBudgetHoeheSliderBudgets);
         btnErstellen = findViewById(R.id.btnErstellenBudgets);
@@ -78,7 +78,7 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
             @Override
             public void onClick(View v) {
                 String cuttedByCurrency = edtBudgetHoehe.getText().toString().replace("€", "").replace(" ", "");
-                dbHandler.addNewBudget(edtBeschreibung.getText().toString(), Float.parseFloat(cuttedByCurrency), kategorieAusgewaehlt);
+                dbHandler.addNewBudget(Float.parseFloat(cuttedByCurrency), kategorieAusgewaehlt);
                 loadAllBudgets();
             }
         });
@@ -90,7 +90,7 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Einzelbudget myBudget = adapter.getItem(position);
                 dbHandler.deleteBudget(adapter.getItem(position).getId());
-                Toast.makeText(getApplicationContext(), "Budget " + myBudget.getBeschreibung() +  " gelöscht.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Budget " + myBudget.getKategorie() +  " gelöscht.", Toast.LENGTH_SHORT).show();
                 loadAllBudgets();
             }
         });

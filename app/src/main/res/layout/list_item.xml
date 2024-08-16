@@ -8,7 +8,7 @@
 
 
 
-    <TextView
+    <!--<TextView
         android:id="@+id/tvBeschreibungBudget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         android:text="Mein Budget 1"
         android:textSize="18sp"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        android:focusable="false"/>
+        android:focusable="false"/>-->
 
     <TextView
         android:id="@+id/tvHoeheBudget"
@@ -28,8 +28,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/tvKategorieBudget"
-        app:layout_constraintTop_toBottomOf="@id/tvBeschreibungBudget"
-        app:layout_constraintBottom_toTopOf="@+id/tvKategorieBudget"
+        app:layout_constraintTop_toTopOf="parent"
         app:drawableEndCompat="@drawable/baseline_euro_24"
         android:textColor="@color/matcolpal_900"
         android:text="1234.95"
@@ -43,7 +42,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/tvHoeheBudget"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBeschreibungBudget"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/tvHoeheBudget"
         android:layout_marginTop="0sp"
         app:drawableEndCompat="@drawable/baseline_category_24"
