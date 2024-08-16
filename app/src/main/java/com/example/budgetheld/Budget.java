@@ -78,8 +78,15 @@ public class Budget extends AppCompatActivity implements AdapterView.OnItemSelec
             @Override
             public void onClick(View v) {
                 String cuttedByCurrency = edtBudgetHoehe.getText().toString().replace("€", "").replace(" ", "");
-                dbHandler.addNewBudget(Float.parseFloat(cuttedByCurrency), kategorieAusgewaehlt);
-                loadAllBudgets();
+                if (dbHandler.checkCategoryExistence(kategorieAusgewaehlt) == 0)
+                {
+                    dbHandler.addNewBudget(Float.parseFloat(cuttedByCurrency), kategorieAusgewaehlt);
+                    loadAllBudgets();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Fehler: Gibt es vielleicht schon ein Budget in dieser Kategorie?", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

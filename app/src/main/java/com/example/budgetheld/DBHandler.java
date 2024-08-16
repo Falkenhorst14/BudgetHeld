@@ -134,6 +134,27 @@ public class DBHandler extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    public int checkCategoryExistence(int kategorie)
+    {
+        int ergebnis = -1;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT COUNT(*) FROM " + Table_FIRST + " WHERE " + col_KATEGORIE + " = " + kategorie + ";";
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst())
+        {
+            do
+            {
+                ergebnis = cursor.getInt(0);
+            }
+            while(cursor.moveToNext());
+        }
+        cursor.close();
+        return ergebnis;
+    }
+
+
     public void deleteBudget(int ID)
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
