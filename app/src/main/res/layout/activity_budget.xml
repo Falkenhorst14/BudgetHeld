@@ -11,12 +11,13 @@
         android:id="@+id/tvBudget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginEnd="200dp"
         android:text="Ein Budget erstellen"
         app:layout_constraintBottom_toTopOf="@+id/edtBudgetHoeheBudgets"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
    <!-- <EditText
@@ -117,7 +118,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewTrennerBudgets" />
 
-
     <ScrollView
         android:id="@+id/svBudgets"
         android:layout_width="0dp"
@@ -128,6 +128,5 @@
         app:layout_constraintTop_toBottomOf="@+id/btnErstellenBudgets">
 
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

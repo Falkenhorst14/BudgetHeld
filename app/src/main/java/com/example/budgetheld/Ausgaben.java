@@ -60,7 +60,7 @@ public class Ausgaben extends AppCompatActivity implements AdapterView.OnItemSel
         lvAusgaben.setEnabled(true);
 
 
-        String[] items = new String[]{"Haushaltswaren", "Elektronik", "Außergewöhnliches", "Sonstiges"};
+        String[] items = new String[]{"Haushaltswaren", "Elektronik", "Kleidung", "Unterhaltung", "Essen & Trinken","Sport", "Außergewöhnliches", "Sonstiges"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, items);
 
 
@@ -114,11 +114,23 @@ public class Ausgaben extends AppCompatActivity implements AdapterView.OnItemSel
             case "Elektronik":
                 kategorieAusgewaehlt = 2;
                 break;
-            case "Außergewöhnliches":
+            case "Kleidung":
                 kategorieAusgewaehlt = 3;
                 break;
-            case "Sonstiges":
+            case "Unterhaltung":
                 kategorieAusgewaehlt = 4;
+                break;
+            case "Essen & Trinken":
+                kategorieAusgewaehlt = 5;
+                break;
+            case "Sport":
+                kategorieAusgewaehlt = 6;
+                break;
+            case "Außergewöhnliches":
+                kategorieAusgewaehlt = 7;
+                break;
+            case "Sonstiges":
+                kategorieAusgewaehlt = 8;
                 break;
             default:
                 kategorieAusgewaehlt = 0;
