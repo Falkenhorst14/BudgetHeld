@@ -39,9 +39,21 @@ public class BudgetAdapter extends ArrayAdapter<Einzelbudget>
                 kategorie = "Elektronik";
                 break;
             case 3:
-                kategorie = "Außergewöhnliches";
+                kategorie = "Kleidung";
                 break;
             case 4:
+                kategorie = "Unterhaltung";
+                break;
+            case 5:
+                kategorie = "Essen & Trinken";
+                break;
+            case 6:
+                kategorie = "Sport";
+                break;
+            case 7:
+                kategorie = "Außergewöhnliches";
+                break;
+            case 8:
                 kategorie = "Sonstiges";
                 break;
             default:
