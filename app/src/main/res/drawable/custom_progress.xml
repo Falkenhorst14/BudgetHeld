@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingMode="stack">
+
+    <item android:id="@android:id/background">
+        <inset android:inset="5dp">
+            <shape android:shape="oval">
+                <solid android:color="@color/matcolpal_100" />
+            </shape>
+        </inset>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <inset android:inset="5dp">
+            <clip
+                android:clipOrientation="vertical"
+                android:gravity="bottom">
+                <shape android:shape="oval">
+                    <solid android:color="@color/matcolpal_A400" />
+                </shape>
+            </clip>
+        </inset>
+    </item>
+
+    <item>
+        <shape android:shape="oval">
+            <stroke
+                android:width="5dp"
+                android:color="@color/matcolpal_dark" />
+        </shape>
+    </item>
+
+</layer-list>

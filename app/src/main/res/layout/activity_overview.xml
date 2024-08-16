@@ -7,4 +7,60 @@
     android:layout_height="match_parent"
     tools:context=".Overview">
 
+    <TextView
+        android:id="@+id/tvBudgetUebersicht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Budgetübersicht"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/lnlHaushaltswaren"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:textSize="18dp"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lnlHaushaltswaren"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBudgetUebersicht">
+
+
+        <ProgressBar
+            android:id="@+id/pgb_customHaushaltswaren"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin= "20dp"
+            android:progressDrawable="@drawable/custom_progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvHaushaltswaren"
+            />
+
+        <TextView
+            android:id="@+id/tvHaushaltswaren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pgb_customHaushaltswaren"
+            android:text="Haushaltswaren"
+            android:textSize="12dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
