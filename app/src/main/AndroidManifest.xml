@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BudgetHeld"
         tools:targetApi="31">
         <activity
+            android:name=".Overview"
+            android:exported="false" />
+        <activity
             android:name=".Ausgaben"
             android:exported="false" />
         <activity
