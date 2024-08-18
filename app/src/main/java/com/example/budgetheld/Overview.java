@@ -26,7 +26,7 @@ public class Overview extends AppCompatActivity {
 
         pgbCustomHaushaltswaren = findViewById(R.id.pgb_customHaushaltswaren);
 
-        pgbCustomHaushaltswaren.setProgress(Math.toIntExact(Math.round(12.34)));
+        pgbCustomHaushaltswaren.setProgress(Math.toIntExact(Math.round(72.34)));
 
     }
 }
