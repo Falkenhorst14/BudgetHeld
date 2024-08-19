@@ -95,6 +95,14 @@
         app:layout_constraintTop_toBottomOf="@+id/spnKategorieAusgaben"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/btnErstellenAusgaben"
+        app:layout_constraintLeft_toRightOf="@+id/btnErstellenAusgaben"
+        app:layout_constraintBottom_toBottomOf="@+id/btnErstellenAusgaben"
+        android:layout_marginLeft="15sp"
+        android:text="(Löschen durch anklicken)"/>
 
     <View
         android:id="@+id/viewTrennerAusgaben"
