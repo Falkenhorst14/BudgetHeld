@@ -55,7 +55,15 @@
                     app:layout_constraintBottom_toTopOf="@+id/tvHaushaltswaren"
                     />
 
-                
+                <TextView
+                    android:id="@+id/tvPercentageHaushaltswaren"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customHaushaltswaren"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customHaushaltswaren"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customHaushaltswaren"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customHaushaltswaren">
+                </TextView>
 
                 <TextView
                     android:id="@+id/tvHaushaltswaren"
@@ -77,7 +85,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toRightOf="@+id/lnlHaushaltswaren"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvBudgetUebersicht">
+                app:layout_constraintTop_toTopOf="parent">
 
 
                 <ProgressBar
@@ -92,6 +100,16 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/tvElektronik"
                     />
+
+                <TextView
+                    android:id="@+id/tvPercentageElektronik"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customElektronik"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customElektronik"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customElektronik"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customElektronik">
+                </TextView>
 
                 <TextView
                     android:id="@+id/tvElektronik"
@@ -130,6 +148,16 @@
                     />
 
                 <TextView
+                    android:id="@+id/tvPercentageKleidung"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customKleidung"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customKleidung"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customKleidung"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customKleidung">
+                </TextView>
+
+                <TextView
                     android:id="@+id/tvKleidung"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -164,6 +192,16 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/tvUnterhaltung"
                     />
+
+                <TextView
+                    android:id="@+id/tvPercentageUnterhaltung"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customUnterhaltung"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customUnterhaltung"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customUnterhaltung"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customUnterhaltung">
+                </TextView>
 
                 <TextView
                     android:id="@+id/tvUnterhaltung"
@@ -202,6 +240,16 @@
                     />
 
                 <TextView
+                    android:id="@+id/tvPercentageEssenTrinken"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customEssenTrinken"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customEssenTrinken"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customEssenTrinken"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customEssenTrinken">
+                </TextView>
+
+                <TextView
                     android:id="@+id/tvEssenTrinken"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -236,6 +284,16 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/tvSport"
                     />
+
+                <TextView
+                    android:id="@+id/tvPercentageSport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customSport"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customSport"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customSport"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customSport">
+                </TextView>
 
                 <TextView
                     android:id="@+id/tvSport"
@@ -274,6 +332,16 @@
                     />
 
                 <TextView
+                    android:id="@+id/tvPercentageAussergewoehnliches"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customAussergewoehnliches"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customAussergewoehnliches"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customAussergewoehnliches"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customAussergewoehnliches">
+                </TextView>
+
+                <TextView
                     android:id="@+id/tvAussergewoehnliches"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -310,13 +378,23 @@
                     />
 
                 <TextView
+                    android:id="@+id/tvPercentageSonstiges"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/pgb_customSonstiges"
+                    app:layout_constraintRight_toRightOf="@+id/pgb_customSonstiges"
+                    app:layout_constraintTop_toTopOf="@+id/pgb_customSonstiges"
+                    app:layout_constraintBottom_toBottomOf="@+id/pgb_customSonstiges">
+                </TextView>
+
+                <TextView
                     android:id="@+id/tvSonstiges"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/pgb_customSonstiges"
-                    android:text="Sport"
+                    android:text="Sonstiges"
                     android:textSize="12dp"
                     style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
 
