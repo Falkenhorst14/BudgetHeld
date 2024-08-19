@@ -98,6 +98,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/tvLoeschenBudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/btnErstellenBudgets"
+        app:layout_constraintLeft_toRightOf="@+id/btnErstellenBudgets"
+        app:layout_constraintBottom_toBottomOf="@+id/btnErstellenBudgets"
+        android:layout_marginLeft="15sp"
+        android:text="(Löschen durch anklicken)"/>
+
     <View
         android:id="@+id/viewTrennerBudgets"
         android:layout_width="match_parent"
