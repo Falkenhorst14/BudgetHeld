@@ -1,5 +1,6 @@
 package com.example.budgetheld;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -65,30 +66,133 @@ public class Overview extends AppCompatActivity {
 
 
         int PercentageHaushaltswaren = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(1))/(dbHandler.getBudgetByKategorie(1))*100)));
-        tvPercentageHaushaltswaren.setText(String.valueOf(PercentageHaushaltswaren) + " %");
+        if (PercentageHaushaltswaren == 0)
+        {
+            tvPercentageHaushaltswaren.setText("Leer");
+            tvPercentageHaushaltswaren.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageHaushaltswaren < 0)
+        {
+            tvPercentageHaushaltswaren.setText("Überschritten");
+            tvPercentageHaushaltswaren.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageHaushaltswaren.setText(String.valueOf(PercentageHaushaltswaren) + " %");
+        }
         pgbCustomHaushaltswaren.setProgress(PercentageHaushaltswaren);
         int PercentageElektronik = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(2))/(dbHandler.getBudgetByKategorie(2))*100)));
-        tvPercentageElektronik.setText(String.valueOf(PercentageElektronik) + " %");
+        if (PercentageElektronik == 0)
+        {
+            tvPercentageElektronik.setText("Leer");
+            tvPercentageElektronik.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageElektronik < 0)
+        {
+            tvPercentageElektronik.setText("Überschritten");
+            tvPercentageElektronik.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageElektronik.setText(String.valueOf(PercentageElektronik) + " %");
+        }
         pgbCustomElektronik.setProgress(PercentageElektronik);
         int PercentageKleidung = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(3))/(dbHandler.getBudgetByKategorie(3))*100)));
-        tvPercentageKleidung.setText(String.valueOf(PercentageKleidung) + " %");
+        if (PercentageKleidung == 0)
+        {
+            tvPercentageKleidung.setText("Leer");
+            tvPercentageKleidung.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageKleidung < 0)
+        {
+            tvPercentageKleidung.setText("Überschritten");
+            tvPercentageKleidung.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageKleidung.setText(String.valueOf(PercentageKleidung) + " %");
+        }
         pgbCustomKleidung.setProgress(PercentageKleidung);
         int PercentageUnterhaltung = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(4))/(dbHandler.getBudgetByKategorie(4))*100)));
-        tvPercentageUnterhaltung.setText(String.valueOf(PercentageUnterhaltung) + " %");
+        if (PercentageUnterhaltung == 0)
+        {
+            tvPercentageUnterhaltung.setText("Leer");
+            tvPercentageUnterhaltung.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageUnterhaltung < 0)
+        {
+            tvPercentageUnterhaltung.setText("Überschritten");
+            tvPercentageUnterhaltung.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageUnterhaltung.setText(String.valueOf(PercentageUnterhaltung) + " %");
+        }
         pgbCustomUnterhaltung.setProgress(PercentageUnterhaltung);
         int PercentageEssenTrinken = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(5))/(dbHandler.getBudgetByKategorie(5))*100)));
-        tvPercentageEssenTrinken.setText(String.valueOf(PercentageEssenTrinken) + " %");
+        if (PercentageEssenTrinken == 0)
+        {
+            tvPercentageEssenTrinken.setText("Leer");
+            tvPercentageEssenTrinken.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageEssenTrinken < 0)
+        {
+            tvPercentageEssenTrinken.setText("Überschritten");
+            tvPercentageEssenTrinken.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageEssenTrinken.setText(String.valueOf(PercentageEssenTrinken) + " %");
+        }
         pgbCustomEssenTrinken.setProgress(PercentageEssenTrinken);
         int PercentageSport = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(6))/(dbHandler.getBudgetByKategorie(6))*100)));
-        tvPercentageSport.setText(String.valueOf(PercentageSport) + " %");
+        if (PercentageSport == 0)
+        {
+            tvPercentageSport.setText("Leer");
+            tvPercentageSport.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageSport < 0)
+        {
+            tvPercentageSport.setText("Überschritten");
+            tvPercentageSport.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageSport.setText(String.valueOf(PercentageSport) + " %");
+        }
         pgbCustomSport.setProgress(PercentageSport);
         int PercentageAussergewoehnliches = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(7))/(dbHandler.getBudgetByKategorie(7))*100)));
-        tvPercentageAussergewoehnliches.setText(String.valueOf(PercentageAussergewoehnliches) + " %");
+        if (PercentageAussergewoehnliches == 0)
+        {
+            tvPercentageAussergewoehnliches.setText("Leer");
+            tvPercentageAussergewoehnliches.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageAussergewoehnliches < 0)
+        {
+            tvPercentageAussergewoehnliches.setText("Überschritten");
+            tvPercentageAussergewoehnliches.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageAussergewoehnliches.setText(String.valueOf(PercentageAussergewoehnliches) + " %");
+        }
         pgbCustomAussergewoehnliches.setProgress(PercentageAussergewoehnliches);
         int PercentageSonstiges = Math.toIntExact(Math.round(100-((dbHandler.sumAllAusgabenByKategorie(8))/(dbHandler.getBudgetByKategorie(8))*100)));
-        tvPercentageSonstiges.setText(String.valueOf(PercentageSonstiges) + " %");
+        if (PercentageSonstiges == 0)
+        {
+            tvPercentageSonstiges.setText("Leer");
+            tvPercentageSonstiges.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else if (PercentageSonstiges < 0)
+        {
+            tvPercentageSonstiges.setText("Überschritten");
+            tvPercentageSonstiges.setTextColor(Color.parseColor("#ff4545"));
+        }
+        else
+        {
+            tvPercentageSonstiges.setText(String.valueOf(PercentageSonstiges) + " %");
+        }
         pgbCustomSonstiges.setProgress(PercentageSonstiges);
-
 
     }
 }

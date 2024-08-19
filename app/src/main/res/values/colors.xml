@@ -20,6 +20,8 @@
     <color name="matcolpal_dark">#1d2e16</color>
     <color name="matcolpal_darkExtra">#0d140a</color>
     <color name="matcolpal_darkMiddle">#121c0d</color>
+    <color name="AlertRed">#ff4545</color>
+
 
 
 </resources>
