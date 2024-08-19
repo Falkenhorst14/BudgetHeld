@@ -169,5 +169,43 @@ public class DBHandler extends SQLiteOpenHelper {
         sqLiteDatabase.close();
     }
 
+    public float sumAllAusgabenByKategorie(int kategorie)
+    {
+        float sum = -1;
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        String query = "SELECT SUM(" + col_HOEHE + ") FROM " + Table_SECOND + " WHERE " + col_KATEGORIE + " = " + kategorie;
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst())
+        {
+            do
+            {
+                sum = cursor.getFloat(0);
+            }
+            while(cursor.moveToNext());
+        }
+        cursor.close();
+        return sum;
+    }
+
+    public float getBudgetByKategorie(int kategorie)
+    {
+        float budgetHoehe = -1;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT " + col_HOEHE + " FROM " + Table_FIRST + " WHERE " + col_KATEGORIE + " = " + kategorie;
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst())
+        {
+            do
+            {
+                budgetHoehe = cursor.getFloat(0);
+            }
+            while(cursor.moveToNext());
+        }
+        cursor.close();
+        return budgetHoehe;
+    }
 }

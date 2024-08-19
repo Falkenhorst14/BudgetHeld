@@ -11,56 +11,319 @@
         android:id="@+id/tvBudgetUebersicht"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="Budgetübersicht"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/lnlHaushaltswaren"
+        app:layout_constraintBottom_toTopOf="@+id/svBudgets"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:textSize="18dp"/>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/lnlHaushaltswaren"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+    <ScrollView
+        android:id="@+id/svBudgets"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBudgetUebersicht">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cslScrollable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ProgressBar
-            android:id="@+id/pgb_customHaushaltswaren"
-            style="?android:progressBarStyleHorizontal"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin= "20dp"
-            android:progressDrawable="@drawable/custom_progress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tvHaushaltswaren"
-            />
-
-        <TextView
-            android:id="@+id/tvHaushaltswaren"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pgb_customHaushaltswaren"
-            android:text="Haushaltswaren"
-            android:textSize="12dp"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
-
-        </TextView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlHaushaltswaren"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/lnlElektronik"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
+                <ProgressBar
+                    android:id="@+id/pgb_customHaushaltswaren"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvHaushaltswaren"
+                    />
+
+                
+
+                <TextView
+                    android:id="@+id/tvHaushaltswaren"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customHaushaltswaren"
+                    android:text="Haushaltswaren"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlElektronik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/lnlHaushaltswaren"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBudgetUebersicht">
 
 
+                <ProgressBar
+                    android:id="@+id/pgb_customElektronik"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvElektronik"
+                    />
 
+                <TextView
+                    android:id="@+id/tvElektronik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customElektronik"
+                    android:text="Elektronik"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlKleidung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/lnlUnterhaltung"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnlHaushaltswaren">
+
+
+                <ProgressBar
+                    android:id="@+id/pgb_customKleidung"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvKleidung"
+                    />
+
+                <TextView
+                    android:id="@+id/tvKleidung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customKleidung"
+                    android:text="kleidung"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlUnterhaltung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/lnlKleidung"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnlElektronik">
+
+
+                <ProgressBar
+                    android:id="@+id/pgb_customUnterhaltung"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvUnterhaltung"
+                    />
+
+                <TextView
+                    android:id="@+id/tvUnterhaltung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customUnterhaltung"
+                    android:text="Unterhaltung"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlEssenTrinken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/lnlSport"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnlKleidung">
+
+
+                <ProgressBar
+                    android:id="@+id/pgb_customEssenTrinken"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvEssenTrinken"
+                    />
+
+                <TextView
+                    android:id="@+id/tvEssenTrinken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customEssenTrinken"
+                    android:text="Essen &amp; Trinken"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlSport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/lnlEssenTrinken"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnlUnterhaltung">
+
+
+                <ProgressBar
+                    android:id="@+id/pgb_customSport"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvSport"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customSport"
+                    android:text="Sport"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlAussergewoehnliches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/lnlSport"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnlEssenTrinken">
+
+
+                <ProgressBar
+                    android:id="@+id/pgb_customAussergewoehnliches"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvAussergewoehnliches"
+                    />
+
+                <TextView
+                    android:id="@+id/tvAussergewoehnliches"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customAussergewoehnliches"
+                    android:text="Essen &amp; Trinken"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlSonstiges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/lnlEssenTrinken"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnlSport">
+
+
+                <ProgressBar
+                    android:id="@+id/pgb_customSonstiges"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin= "20dp"
+                    android:progressDrawable="@drawable/custom_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tvSonstiges"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSonstiges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pgb_customSonstiges"
+                    android:text="Sport"
+                    android:textSize="12dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon">
+
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
