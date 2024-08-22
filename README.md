@@ -4,7 +4,7 @@ Projekt im Rahmen meines Studiums zum Agilen Software Engineering.
 
 Budget-Tracker inform einer mobilen Android-Applikation zur Eintragung von Ausgaben sowie für eine Ausgaben- und Budgetübersicht.
 
-![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://raw.githubusercontent.com/Falkenhorst14/BudgetHeld/main/app/src/main/res/drawable/moneyhead.png?token=GHSAT0AAAAAACS7LKWVNG3UIAIW5MSMYRUUZWHHN3A))
+![MoneyHead Icon](https://raw.githubusercontent.com/Falkenhorst14/BudgetHeld/main/app/src/main/res/drawable/moneyhead.png?token=GHSAT0AAAAAACS7LKWVNG3UIAIW5MSMYRUUZWHHN3A))
 
 Funktionen:
 1. Erstellen von Budgets fuer festgelegte Kategorien
